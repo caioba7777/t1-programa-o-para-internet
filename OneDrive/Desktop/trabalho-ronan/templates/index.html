@@ -1,7 +1,7 @@
 {% extends "base_publica.html" %}
 
 {% block conteudo %}
-<div class="p-5 mb-4 bg-white rounded-4 shadow-sm destaque-home">
+<div class="p-5 mb-4 rounded-4 shadow-sm destaque-home">
     <div class="container-fluid py-3">
         <h1 class="display-5 fw-bold">Bem-vindo ao TechStore Manager</h1>
         <p class="col-md-10 fs-5">
@@ -9,9 +9,29 @@
             O objetivo do sistema é facilitar o controle de usuários, produtos e categorias, trazendo
             mais organização e praticidade para o negócio.
         </p>
+
         <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg me-2">Fazer login</a>
         <a href="{{ url_for('cadastro') }}" class="btn btn-outline-dark btn-lg">Criar conta</a>
     </div>
+</div>
+<hr class="my-4">
+
+<h3 class="mb-3">Acessos rápidos</h3>
+
+<div class="d-flex flex-wrap gap-2">
+
+    <!-- USUÁRIOS -->
+    <a href="{{ url_for('listar_usuarios') }}" class="btn btn-primary">Listar Usuários</a>
+    <a href="{{ url_for('inserir_usuario') }}" class="btn btn-success">Inserir Usuário</a>
+
+    <!-- PRODUTOS -->
+    <a href="{{ url_for('listar_produtos') }}" class="btn btn-primary">Listar Produtos</a>
+    <a href="{{ url_for('inserir_produto') }}" class="btn btn-success">Inserir Produto</a>
+
+    <!-- CATEGORIAS -->
+    <a href="{{ url_for('listar_categorias') }}" class="btn btn-primary">Listar Categorias</a>
+    <a href="{{ url_for('inserir_categoria') }}" class="btn btn-success">Inserir Categoria</a>
+
 </div>
 
 <div class="row g-4">

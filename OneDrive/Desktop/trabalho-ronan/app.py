@@ -1,17 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 
-# criando a aplicação Flask
 app = Flask(__name__)
-
-# chave secreta para usar mensagens flash
 app.secret_key = "segredo_t1_flask"
 
-# =====================================
+# =========================
 # DADOS SIMULADOS
-# =====================================
-# como o professor pediu sem banco de dados,
-# vamos usar listas em Python para simular os registros
-
+# =========================
 usuarios = [
     {"id": 1, "nome": "Caio Silva", "email": "caio@email.com", "perfil": "Administrador"},
     {"id": 2, "nome": "Ana Souza", "email": "ana@email.com", "perfil": "Gerente"},
@@ -36,20 +30,16 @@ categorias = [
     {"id": 5, "nome": "Escritório", "descricao": "Itens voltados para rotina administrativa", "status": "Ativa", "setor": "Administrativo"},
 ]
 
-# =====================================
+# =========================
 # ROTAS PÚBLICAS
-# =====================================
-
+# =========================
 @app.route("/")
 def index():
-    # página inicial do sistema
     return render_template("index.html")
 
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
-    # GET -> mostra a tela de login
-    # POST -> simula login e redireciona
     if request.method == "POST":
         email = request.form.get("email")
         senha = request.form.get("senha")
@@ -66,7 +56,6 @@ def login():
 
 @app.route("/cadastro", methods=["GET", "POST"])
 def cadastro():
-    # cadastro público de usuário
     if request.method == "POST":
         nome = request.form.get("nome")
         email = request.form.get("email")
@@ -89,14 +78,12 @@ def cadastro():
 
 @app.route("/logout")
 def logout():
-    # simula o logout
     flash("Logout realizado com sucesso.")
     return redirect(url_for("login"))
 
-# =====================================
+# =========================
 # USUÁRIOS
-# =====================================
-
+# =========================
 @app.route("/usuarios/listar")
 def listar_usuarios():
     return render_template("usuarios/listar_usuarios.html", usuarios=usuarios)
@@ -125,12 +112,11 @@ def inserir_usuario():
         flash("Usuário inserido com sucesso.")
         return redirect(url_for("listar_usuarios"))
 
-    return render_template("usuarios/inserir_usuario.html")
+    return render_template("usuarios/inserir_usuarios.html")
 
-# =====================================
+# =========================
 # PRODUTOS
-# =====================================
-
+# =========================
 @app.route("/produtos/listar")
 def listar_produtos():
     return render_template("produtos/listar_produtos.html", produtos=produtos)
@@ -160,12 +146,11 @@ def inserir_produto():
         flash("Produto inserido com sucesso.")
         return redirect(url_for("listar_produtos"))
 
-    return render_template("produtos/inserir_produto.html")
+    return render_template("produtos/inserir.produtos.html")
 
-# =====================================
+# =========================
 # CATEGORIAS
-# =====================================
-
+# =========================
 @app.route("/categorias/listar")
 def listar_categorias():
     return render_template("categorias/listar_categorias.html", categorias=categorias)
@@ -195,12 +180,11 @@ def inserir_categoria():
         flash("Categoria inserida com sucesso.")
         return redirect(url_for("listar_categorias"))
 
-    return render_template("categorias/inserir_categoria.html")
+    return render_template("categorias/inserir_categorias.html")
 
-# =====================================
+# =========================
 # EQUIPE
-# =====================================
-
+# =========================
 @app.route("/equipe")
 def equipe():
     return render_template("sobre_equipe.html")
