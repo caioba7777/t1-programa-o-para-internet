@@ -27,7 +27,7 @@
             <td>{{ produto.categoria }}</td>
             <td>
                 <a href="#" class="btn btn-sm btn-primary">Editar</a>
-                <a href="#" class="btn btn-sm btn-danger" onclick="return confirmarExclusao()">Excluir</a>
+                <a href="{{ url_for('excluir_produto', id=produto.id) }}" class="btn btn-sm btn-danger" onclick="return confirmarExclusao()">Excluir</a>
             </td>
         </tr>
         {% endfor %}

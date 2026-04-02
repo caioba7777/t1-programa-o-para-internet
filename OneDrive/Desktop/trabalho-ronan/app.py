@@ -114,6 +114,14 @@ def inserir_usuario():
 
     return render_template("usuarios/inserir_usuarios.html")
 
+
+@app.route("/usuarios/excluir/<int:id>")
+def excluir_usuario(id):
+    global usuarios
+    usuarios = [usuario for usuario in usuarios if usuario["id"] != id]
+    flash("Usuário excluído com sucesso.")
+    return redirect(url_for("listar_usuarios"))
+
 # =========================
 # PRODUTOS
 # =========================
@@ -148,6 +156,14 @@ def inserir_produto():
 
     return render_template("produtos/inserir.produtos.html")
 
+
+@app.route("/produtos/excluir/<int:id>")
+def excluir_produto(id):
+    global produtos
+    produtos = [produto for produto in produtos if produto["id"] != id]
+    flash("Produto excluído com sucesso.")
+    return redirect(url_for("listar_produtos"))
+
 # =========================
 # CATEGORIAS
 # =========================
@@ -181,6 +197,14 @@ def inserir_categoria():
         return redirect(url_for("listar_categorias"))
 
     return render_template("categorias/inserir_categorias.html")
+
+
+@app.route("/categorias/excluir/<int:id>")
+def excluir_categoria(id):
+    global categorias
+    categorias = [categoria for categoria in categorias if categoria["id"] != id]
+    flash("Categoria excluída com sucesso.")
+    return redirect(url_for("listar_categorias"))
 
 # =========================
 # EQUIPE

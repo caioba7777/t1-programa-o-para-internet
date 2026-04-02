@@ -25,7 +25,7 @@
             <td>{{ usuario.perfil }}</td>
             <td>
                 <a href="#" class="btn btn-sm btn-primary">Editar</a>
-                <a href="#" class="btn btn-sm btn-danger" onclick="return confirmarExclusao()">Excluir</a>
+                <a href="{{ url_for('excluir_usuario', id=usuario.id) }}" class="btn btn-sm btn-danger" onclick="return confirmarExclusao()">Excluir</a>
             </td>
         </tr>
         {% endfor %}
