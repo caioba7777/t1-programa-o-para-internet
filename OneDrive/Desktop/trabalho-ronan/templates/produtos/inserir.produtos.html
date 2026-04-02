@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h2 class="mb-4">Inserir Produto</h2>
+
+<form method="POST" class="card p-4 shadow-sm border-0">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome do produto</label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do produto">
+    </div>
+
+    <div class="mb-3">
+        <label for="preco" class="form-label">Preço</label>
+        <input type="text" class="form-control" id="preco" name="preco" placeholder="Digite o preço do produto">
+    </div>
+
+    <div class="mb-3">
+        <label for="estoque" class="form-label">Estoque</label>
+        <input type="number" class="form-control" id="estoque" name="estoque" placeholder="Digite a quantidade em estoque">
+    </div>
+
+    <div class="mb-3">
+        <label for="categoria" class="form-label">Categoria</label>
+        <select class="form-select" id="categoria" name="categoria">
+            <option value="">Selecione</option>
+            <option>Periféricos</option>
+            <option>Monitores</option>
+            <option>Áudio</option>
+            <option>Informática</option>
+            <option>Escritório</option>
+        </select>
+    </div>
+
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="{{ url_for('listar_produtos') }}" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+{% endblock %}

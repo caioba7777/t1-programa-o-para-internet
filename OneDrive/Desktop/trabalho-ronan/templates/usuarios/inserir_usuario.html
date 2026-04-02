@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h2 class="mb-4">Inserir Usuário</h2>
+
+<form method="POST" class="card p-4 shadow-sm border-0">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do usuário">
+    </div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Digite o e-mail do usuário">
+    </div>
+
+    <div class="mb-3">
+        <label for="perfil" class="form-label">Perfil</label>
+        <select class="form-select" id="perfil" name="perfil">
+            <option value="">Selecione</option>
+            <option>Administrador</option>
+            <option>Gerente</option>
+            <option>Vendedor</option>
+            <option>Atendente</option>
+            <option>Operador</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="senha" class="form-label">Senha</label>
+        <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite uma senha">
+    </div>
+
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="{{ url_for('listar_usuarios') }}" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
+{% endblock %}

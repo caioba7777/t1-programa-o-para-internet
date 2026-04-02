@@ -1,0 +1,51 @@
+{% extends "base_publica.html" %}
+
+{% block conteudo %}
+<div class="p-5 mb-4 bg-white rounded-4 shadow-sm destaque-home">
+    <div class="container-fluid py-3">
+        <h1 class="display-5 fw-bold">Bem-vindo ao TechStore Manager</h1>
+        <p class="col-md-10 fs-5">
+            O TechStore Manager é um sistema web de gestão comercial voltado para lojas de tecnologia.
+            O objetivo do sistema é facilitar o controle de usuários, produtos e categorias, trazendo
+            mais organização e praticidade para o negócio.
+        </p>
+        <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg me-2">Fazer login</a>
+        <a href="{{ url_for('cadastro') }}" class="btn btn-outline-dark btn-lg">Criar conta</a>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm card-home">
+            <div class="card-body">
+                <h3 class="card-title">Gestão de Usuários</h3>
+                <p class="card-text">
+                    Cadastro e visualização de usuários do sistema com perfis diferentes.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm card-home">
+            <div class="card-body">
+                <h3 class="card-title">Controle de Produtos</h3>
+                <p class="card-text">
+                    Listagem de produtos com preço, estoque e vínculo com categorias.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm card-home">
+            <div class="card-body">
+                <h3 class="card-title">Organização por Categorias</h3>
+                <p class="card-text">
+                    Separação dos produtos por categoria para facilitar a gestão do catálogo.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
