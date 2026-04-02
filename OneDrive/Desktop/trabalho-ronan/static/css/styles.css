@@ -1,59 +1,86 @@
+/* =========================
+   FUNDO GERAL
+========================= */
 body {
-    background: linear-gradient(135deg, #0b1020, #1b1740, #2a1f5a);
+    background: linear-gradient(135deg, #020617, #0f172a, #1e1b4b, #312e81);
     background-attachment: fixed;
     color: #e5e7eb;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
 
+/* =========================
+   TÍTULOS
+========================= */
 h1, h2, h3 {
-    color: #d8b4fe;
-    font-weight: 700;
+    color: #c4b5fd;
+    font-weight: bold;
 }
 
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
-    background: #0f172a !important;
-    border-bottom: 1px solid rgba(168, 85, 247, 0.25);
+    background: rgba(15, 23, 42, 0.95) !important;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .navbar-brand {
-    color: #d8b4fe !important;
-    font-weight: 700;
+    color: #c4b5fd !important;
+    font-weight: bold;
 }
 
 .nav-link {
-    color: #e5e7eb !important;
+    color: #cbd5e1 !important;
+    transition: 0.2s ease;
 }
 
 .nav-link:hover {
-    color: #d8b4fe !important;
+    color: #c4b5fd !important;
 }
 
-.active-link {
-    color: #d8b4fe !important;
-    font-weight: 700;
-}
-
+/* =========================
+   HOME DESTAQUE
+========================= */
 .destaque-home {
-    background: rgba(255, 255, 255, 0.08);
-    border-left: 5px solid #a855f7;
+    background: linear-gradient(145deg, rgba(30, 27, 75, 0.9), rgba(15, 23, 42, 0.9));
+    border-left: 5px solid #a78bfa;
     border-radius: 16px;
+    padding: 20px;
 }
 
+/* =========================
+   CARDS
+========================= */
 .card {
-    background: rgba(15, 23, 42, 0.88);
-    color: #e5e7eb;
-    border: 1px solid rgba(168, 85, 247, 0.18);
+    background: linear-gradient(145deg, #1e1b4b, #0f172a);
+    border: 1px solid rgba(168, 85, 247, 0.2);
     border-radius: 16px;
+    color: #e5e7eb;
+    transition: 0.2s ease;
+}
+
+.card-home:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
 }
 
 .card-title {
-    color: #d8b4fe;
+    color: #c4b5fd;
 }
 
+/* =========================
+   BOTÕES
+========================= */
 .btn {
     border-radius: 12px;
     font-weight: 600;
+    padding: 10px 18px;
+    transition: 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
 }
 
 .btn-primary {
@@ -63,7 +90,7 @@ h1, h2, h3 {
 }
 
 .btn-success {
-    background: linear-gradient(135deg, #8b5cf6, #c084fc);
+    background: linear-gradient(135deg, #9333ea, #c084fc);
     border: none;
     color: white;
 }
@@ -71,7 +98,7 @@ h1, h2, h3 {
 .btn-secondary {
     background: #334155;
     border: none;
-    color: white;
+    color: #e5e7eb;
 }
 
 .btn-danger {
@@ -82,23 +109,21 @@ h1, h2, h3 {
 
 .btn-outline-dark {
     border: 1px solid #a78bfa;
-    color: #d8b4fe;
+    color: #c4b5fd;
     background: transparent;
 }
 
 .btn-outline-dark:hover {
-    background: rgba(168, 85, 247, 0.15);
-    color: #f5f3ff;
+    background: rgba(168, 85, 247, 0.2);
 }
 
-.btn-outline-light:hover {
-    background: rgba(255, 255, 255, 0.08);
-}
-
+/* =========================
+   FORMULÁRIOS
+========================= */
 .form-control,
 .form-select,
 textarea {
-    background: #0f172a;
+    background-color: #0f172a;
     color: #e5e7eb;
     border: 1px solid rgba(148, 163, 184, 0.2);
     border-radius: 10px;
@@ -107,51 +132,77 @@ textarea {
 .form-control:focus,
 .form-select:focus,
 textarea:focus {
-    background: #111827;
-    color: white;
     border-color: #a78bfa;
     box-shadow: 0 0 0 0.2rem rgba(168, 85, 247, 0.2);
 }
 
-.form-label {
-    color: #e5e7eb;
-}
-
+/* =========================
+   TABELAS
+========================= */
 .table {
-    background: rgba(15, 23, 42, 0.9);
+    background-color: #0f172a;
     color: #e5e7eb;
 }
 
-.table thead th {
-    background: #1e1b4b !important;
-    color: #d8b4fe !important;
+.table thead {
+    background-color: #1e1b4b;
+    color: #c4b5fd;
 }
 
 .table-hover tbody tr:hover {
-    background: rgba(168, 85, 247, 0.08);
+    background-color: rgba(168, 85, 247, 0.1);
 }
 
+/* =========================
+   ALERTAS
+========================= */
 .alert {
     border-radius: 12px;
-    border: none;
 }
 
 .alert-success {
-    background: rgba(34, 197, 94, 0.18);
+    background: rgba(34, 197, 94, 0.2);
     color: #bbf7d0;
 }
 
 .alert-info {
-    background: rgba(59, 130, 246, 0.18);
+    background: rgba(59, 130, 246, 0.2);
     color: #bfdbfe;
 }
 
+/* =========================
+   FOOTER
+========================= */
 .footer-personalizado {
-    background: #0f172a;
+    background: rgba(15, 23, 42, 0.9);
     color: #94a3b8;
-    border-top: 1px solid rgba(168, 85, 247, 0.25);
+    border-top: 1px solid rgba(168, 85, 247, 0.2);
 }
 
+//* =========================
+   ATALHOS (FOOTER DA HOME)
+========================= */
+.atalhos-footer-home {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* botões menores e alinhados */
+.atalhos-footer-home a {
+    padding: 6px 14px;
+    border-radius: 18px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+/* hover suave */
+.atalhos-footer-home a:hover {
+    transform: translateY(-1px);
+}
+
+/* =========================
+   EQUIPE
+========================= */
 .foto-equipe {
     width: 180px;
     height: 180px;

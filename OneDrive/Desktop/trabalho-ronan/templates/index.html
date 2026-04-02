@@ -10,31 +10,11 @@
             mais organização e praticidade para o negócio.
         </p>
 
-        <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg me-2">Fazer login</a>
-        <a href="{{ url_for('cadastro') }}" class="btn btn-outline-dark btn-lg">Criar conta</a>
+        
     </div>
 </div>
-<hr class="my-4">
 
-<h3 class="mb-3">Acessos rápidos</h3>
-
-<div class="d-flex flex-wrap gap-2">
-
-    <!-- USUÁRIOS -->
-    <a href="{{ url_for('listar_usuarios') }}" class="btn btn-primary">Listar Usuários</a>
-    <a href="{{ url_for('inserir_usuario') }}" class="btn btn-success">Inserir Usuário</a>
-
-    <!-- PRODUTOS -->
-    <a href="{{ url_for('listar_produtos') }}" class="btn btn-primary">Listar Produtos</a>
-    <a href="{{ url_for('inserir_produto') }}" class="btn btn-success">Inserir Produto</a>
-
-    <!-- CATEGORIAS -->
-    <a href="{{ url_for('listar_categorias') }}" class="btn btn-primary">Listar Categorias</a>
-    <a href="{{ url_for('inserir_categoria') }}" class="btn btn-success">Inserir Categoria</a>
-
-</div>
-
-<div class="row g-4">
+<div class="row g-4 mt-2">
     <div class="col-md-4">
         <div class="card h-100 shadow-sm card-home">
             <div class="card-body">
@@ -66,6 +46,23 @@
                 </p>
             </div>
         </div>
+    </div>
+</div>
+
+<hr class="my-4">
+
+<div class="atalhos-footer-home">
+    <h3 class="mb-3">Acessos rápidos</h3>
+
+    <div class="d-flex flex-wrap justify-content-center gap-2 mt-3 atalhos-footer-home">
+        <a href="{{ url_for('listar_usuarios') }}" class="btn btn-primary">Listar Usuários</a>
+        <a href="{{ url_for('inserir_usuario') }}" class="btn btn-success">Inserir Usuário</a>
+
+        <a href="{{ url_for('listar_produtos') }}" class="btn btn-primary">Listar Produtos</a>
+        <a href="{{ url_for('inserir_produto') }}" class="btn btn-success">Inserir Produto</a>
+
+        <a href="{{ url_for('listar_categorias') }}" class="btn btn-primary">Listar Categorias</a>
+        <a href="{{ url_for('inserir_categoria') }}" class="btn btn-success">Inserir Categoria</a>
     </div>
 </div>
 {% endblock %}
