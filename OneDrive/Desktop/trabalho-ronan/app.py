@@ -89,6 +89,7 @@ def listar_usuarios():
     return render_template("usuarios/listar_usuarios.html", usuarios=usuarios)
 
 
+
 @app.route("/usuarios/inserir", methods=["GET", "POST"])
 def inserir_usuario():
     if request.method == "POST":
@@ -121,6 +122,23 @@ def excluir_usuario(id):
     usuarios = [usuario for usuario in usuarios if usuario["id"] != id]
     flash("Usuário excluído com sucesso.")
     return redirect(url_for("listar_usuarios"))
+@app.route("/usuarios/editar/<int:id>", methods=["GET", "POST"])
+def editar_usuario(id):
+    usuario = next((u for u in usuarios if u["id"] == id), None)
+
+    if not usuario:
+        flash("Usuário não encontrado.")
+        return redirect(url_for("listar_usuarios"))
+
+    if request.method == "POST":
+        usuario["nome"] = request.form.get("nome")
+        usuario["email"] = request.form.get("email")
+        usuario["perfil"] = request.form.get("perfil")
+
+        flash("Usuário atualizado com sucesso.")
+        return redirect(url_for("listar_usuarios"))
+
+    return render_template("usuarios/editar_usuarios.html", usuario=usuario)
 
 # =========================
 # PRODUTOS
@@ -164,6 +182,25 @@ def excluir_produto(id):
     flash("Produto excluído com sucesso.")
     return redirect(url_for("listar_produtos"))
 
+@app.route("/produtos/editar/<int:id>", methods=["GET", "POST"])
+def editar_produto(id):
+    produto = next((p for p in produtos if p["id"] == id), None)
+
+    if not produto:
+        flash("Produto não encontrado.")
+        return redirect(url_for("listar_produtos"))
+
+    if request.method == "POST":
+        produto["nome"] = request.form.get("nome")
+        produto["preco"] = request.form.get("preco")
+        produto["estoque"] = request.form.get("estoque")
+        produto["categoria"] = request.form.get("categoria")
+
+        flash("Produto atualizado com sucesso.")
+        return redirect(url_for("listar_produtos"))
+
+    return render_template("produtos/editar.produtos.html", produto=produto)
+
 # =========================
 # CATEGORIAS
 # =========================
@@ -206,6 +243,24 @@ def excluir_categoria(id):
     flash("Categoria excluída com sucesso.")
     return redirect(url_for("listar_categorias"))
 
+@app.route("/categorias/editar/<int:id>", methods=["GET", "POST"])
+def editar_categoria(id):
+    categoria = next((c for c in categorias if c["id"] == id), None)
+
+    if not categoria:
+        flash("Categoria não encontrada.")
+        return redirect(url_for("listar_categorias"))
+
+    if request.method == "POST":
+        categoria["nome"] = request.form.get("nome")
+        categoria["descricao"] = request.form.get("descricao")
+        categoria["status"] = request.form.get("status")
+        categoria["setor"] = request.form.get("setor")
+
+        flash("Categoria atualizada com sucesso.")
+        return redirect(url_for("listar_categorias"))
+
+    return render_template("categorias/editar_categorias.html", categoria=categoria)
 # =========================
 # EQUIPE
 # =========================
