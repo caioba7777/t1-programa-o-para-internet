@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background:
+        radial-gradient(circle at top left, rgba(16, 185, 129, 0.18), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(5, 150, 105, 0.15), transparent 30%),
+        linear-gradient(135deg, #ecfdf5, #d1fae5);
+}
+
+/* CONTAINER */
+.home-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* LADO ESQUERDO */
+.home-image {
+    width: 42%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ecfdf5, #bbf7d0);
+    border-right: 1px solid rgba(5, 150, 105, 0.1);
+    padding: 40px;
+}
+
+/* IMAGEM */
+.home-image img {
+    width: 65%;
+    max-width: 420px;
+    height: auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(5, 150, 105, 0.18);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.home-image img:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 30px 70px rgba(16, 185, 129, 0.25);
+}
+
+/* LADO DIREITO */
+.home-content {
+    width: 58%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #f0fdf4, #dcfce7);
+    padding: 40px;
+}
+
+/* CARD (VIDRO) */
+.content-box {
+    width: 100%;
+    max-width: 560px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    padding: 50px 40px;
+    border-radius: 28px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 25px 60px rgba(5, 150, 105, 0.12);
+
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* TAG */
+.tag-home {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #059669;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    margin-bottom: 16px;
+}
+
+/* TÍTULO */
+.titulo-paytrack {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #047857;
+    margin-bottom: 20px;
+}
+
+/* SUBTÍTULO */
+.subtitulo-paytrack {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #065f46;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+/* TEXTO */
+.frase-apoio {
+    font-size: 1rem;
+    color: #047857;
+    line-height: 1.7;
+    margin-bottom: 50px;
+}
+
+/* BOTÕES */
+.botoes-home {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+/* BASE */
+.btn-home {
+    text-decoration: none;
+    color: white;
+    padding: 15px 34px;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    min-width: 160px;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* LOGIN */
+.btn-login {
+    background: linear-gradient(135deg, #6b7280, #4b5563);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #9ca3af, #6b7280);
+}
+
+/* CADASTRO (DESTAQUE) */
+.btn-cadastro {
+    background: linear-gradient(135deg, #059669, #047857);
+    box-shadow: 0 10px 25px rgba(5, 150, 105, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+/* BRILHO ANIMADO */
+.btn-cadastro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+}
+
+.btn-cadastro:hover::before {
+    left: 100%;
+}
+
+.btn-cadastro:hover {
+    transform: translateY(-2px) scale(1.03);
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+/* ANIMAÇÃO ENTRADA */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVO */
+@media (max-width: 992px) {
+    .home-container {
+        flex-direction: column;
+    }
+
+    .home-image,
+    .home-content {
+        width: 100%;
+    }
+
+    .home-image {
+        min-height: 300px;
+    }
+
+    .home-image img {
+        width: 50%;
+    }
+
+    .titulo-paytrack {
+        font-size: 2.4rem;
+    }
+}
